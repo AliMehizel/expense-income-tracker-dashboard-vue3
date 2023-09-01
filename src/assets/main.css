@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,400&display=swap");
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #040D12;
+  color: #c3c3c3;
+  transition: 0.4s all ease-in-out;
+}
+
+/*040D12*/
+
+#app{
+  overflow: hidden;
+  width: 100%;
+}
+
+.app{
+  background: #F1F0E8;
+  color: #040D12;
+  transition: 0.4s all ease-in-out;
+}
