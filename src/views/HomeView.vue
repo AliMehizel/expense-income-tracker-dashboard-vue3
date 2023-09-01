@@ -533,7 +533,7 @@ li i{
   right: 0;
   background: rgba(0,0,0,0.8);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
@@ -558,6 +558,7 @@ li i{
   cursor: pointer;
 }
 .form-input{
+  margin-top: 280px;
   width: 500px;
   height:380px;
   background: #fff;
