@@ -71,7 +71,7 @@
       <!--button-container-->
       <div class="btn-container">
         <h4>Latest transactions</h4>
-        <button class="add-btn" ><i class="material-icons">add</i> Add transactions</button>
+        <button class="add-btn" @click="handleForm"><i class="material-icons">add</i> Add transactions</button>
       </div>
       <!--inc/exp list-->
       <div class="transaction-list">
@@ -153,6 +153,34 @@
       </div>
     </div>
   </main>
+  <div class="transaction-form-container" v-if="showForm" >
+    
+    <form class="form-input">
+      <div class="form-utils">
+      <i class="material-icons" @click="handleForm">close</i>
+      </div>
+      <div class="form-title">
+        <h3>Add new transaction</h3>
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <input type="text" id="description">
+      </div>
+      <div>
+        <label for="amount">Amount</label>
+        <input type="number" id="amount">
+      </div>
+      <div>
+        <label for="date_field">Date of transaction</label>
+        <input type="date" id="date_field">
+      </div>
+      <div class="form-btn">
+        <button class="expense-btn">Add an expense  <i class="material-icons">arrow_downward</i></button>
+        <strong>Or</strong>
+        <button class="income-btn">Add an income  <i class="material-icons">arrow_upward</i></button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script setup>
@@ -207,7 +235,11 @@ const options = {
   maintainAspectRatio: false
 }
 //handle transactions & form input component
-
+//animation
+const showForm = ref(false)
+function handleForm (){
+  showForm.value = !showForm.value
+}
 //light/dark mode
 function handleClick(){
     const app = document.body
@@ -491,7 +523,105 @@ li i{
   border: 2px solid #183D3D;
   border-radius: 50%;
 }
+/*||transaction form container*/
+.transaction-form-container{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
+
+.form-utils{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.form-utils i{
+  border: none;
+  color: #ef233c;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.form-input{
+  width: 500px;
+  height:380px;
+  background: #fff;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #183D3D;
+  
+}
+
+.form-title{
+  text-align: center;
+}
+.form-input > div {
+  width: 100%;
+}
+.form-input label{
+  display: block;
+  margin:2px 0;
+}
+.form-input input,
+.form-input button{
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*||form button */
+.form-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-btn i {
+  margin-left: 10px;
+}
+
+.expense-btn{
+  margin-top: 25px;
+  background: #ef233c;
+  color: #fff;
+  font-size: 16px;
+}
+
+.income-btn{
+  background: #5C8374;
+  font-size: 16px;
+  color: #fff;
+}
+
+/*|| responsive design*/
 @media screen and (max-width:768px) {
   main{
     grid-template-columns: 1fr;
@@ -509,7 +639,7 @@ li i{
 
     
   }
-  
+  /*||user card */
   .user-card{
     padding: 40px 10px;
     margin: 20px 0 0 0;
@@ -589,7 +719,11 @@ li i{
 }
 
 }
-
+@media screen and (max-width:620px) {
+  .form-input{
+    width: 80%;
+  }
+}
 @media screen and (max-width:425px) {
   /*||side bar */
   .user-card{
