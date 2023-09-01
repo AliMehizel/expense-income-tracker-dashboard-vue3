@@ -209,12 +209,10 @@ const options = {
 //handle transactions & form input component
 
 //light/dark mode
-
-
 function handleClick(){
-  const app = document.body
-  app.classList.toggle('app')
-}
+    const app = document.body
+    app.classList.toggle('app')
+  }
 
 //burger menu
 let show = ref(false)
@@ -530,8 +528,8 @@ li i{
     padding: 10px 0;
     position: absolute;
     top: 82px;
-    right: 0;
-    width: 100%;
+    right: 40%;
+    width: 20%;
     height: 90vh;
     background: #183D3D;
     opacity: 0;
@@ -539,14 +537,14 @@ li i{
   }
 
   #animate{
-    
     transition: all 0.5s  ease-in-out;
-    z-index: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     opacity: 1;
+    width: 100%;
+    right: 0;
   }
 
   .user-links{
@@ -595,20 +593,20 @@ li i{
 @media screen and (max-width:425px) {
   /*||side bar */
   .user-card{
-    width: 95%;
+    width: 93%;
   }
   /*|| box section */
   .box-section{
-    width: 95%;
+    width: 93%;
   }
   /*||chart */
   .chart-container{
-    width: 95%;
+    width: 93%;
   }
 
   /*btn container */
   .btn-container{
-    width: 95%;
+    width: 93%;
   }
 
   .btn-container h4{
@@ -626,8 +624,15 @@ li i{
     font-size: 15px;
   }
   .transaction-list > div{
-    width: 95%;
+    width: 93%;
     
+  }
+
+  /*|| utils container */
+  .utils-container{
+    padding: 0;
+    width: 93%;
+
   }
 }
 </style>
