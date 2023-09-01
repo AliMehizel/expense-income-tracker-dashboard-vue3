@@ -210,8 +210,9 @@ const options = {
 
 //light/dark mode
 
-const app = document.body
+
 function handleClick(){
+  const app = document.body
   app.classList.toggle('app')
 }
 
@@ -311,7 +312,7 @@ li i{
 /*||utils container */
 
 .utils-container{
-  margin-top: 70px;
+  margin-top: 60px;
   padding: 0 5px;
   display: flex;
   align-items: center;
@@ -592,9 +593,41 @@ li i{
 }
 
 @media screen and (max-width:425px) {
+  /*||side bar */
+  .user-card{
+    width: 95%;
+  }
   /*|| box section */
   .box-section{
     width: 95%;
+  }
+  /*||chart */
+  .chart-container{
+    width: 95%;
+  }
+
+  /*btn container */
+  .btn-container{
+    width: 95%;
+  }
+
+  .btn-container h4{
+    font-size: 14px;
+  }
+
+  .btn-container button{
+    font-size: 14px;
+    padding: 5px;
+  }
+  /*||trans list */
+
+  .transaction-list {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+  .transaction-list > div{
+    width: 95%;
+    
   }
 }
 </style>
